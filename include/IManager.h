@@ -1,7 +1,7 @@
 //
 //  IManager.h
 //
-//  Created by Aaron Cody on 10/26/14.
+//  Created by Aaron Cody on 11/26/14.
 //  Copyright (c) 2014 JSA Labs. All rights reserved.
 //
 #ifndef DACORE_IMANAGER_H
