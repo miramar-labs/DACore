@@ -1,7 +1,9 @@
 My Notes:
-0. The DA PUBLIC API will comprise of a Release-built DLL and ALL of the files in DACore\include. NOTHING more than that. 
+0. The DA PUBLIC API will comprise of a Release-built DLL and ALL of the files in DACore\include.
+NOTHING more than that. 
 Everything else is PRIVATE implementation.
 
+Build gotchas:
 1. Need to define this in the preprocessor: _SCL_SECURE_NO_WARNINGS 
 2. Need to define this in command-line options: -Zm512
 
