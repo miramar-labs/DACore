@@ -60,7 +60,7 @@ namespace dacore {
 		/*
 			de-associates a tower from a historian 
 		*/
-		bool					removeTowerFromHistorian(HistorianId hid, TowerId tid);
+		virtual bool			removeTowerFromHistorian(HistorianId hid, TowerId tid) = 0;
 
 	//Tower:
 		/*
