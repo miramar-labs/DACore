@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D9AA3B12-6450-43B9-A9F4-EEDBDC5E5282}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DACore</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(MSBuildProjectDirectory)\include;$(SolutionDir)\3party\include\boost-1.56;$(SolutionDir)\3party\include\gsl-1.16;$(MSBuildProjectDirectory);$(MSBuildProjectDirectory)\src;$(MSBuildProjectDirectory)\src\advisor;$(MSBuildProjectDirectory)\src\tower;$(MSBuildProjectDirectory)\src\historian;$(MSBuildProjectDirectory)\src\tower-config;$(MSBuildProjectDirectory)\src\tower-report;$(MSBuildProjectDirectory)\depreciating;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>$(MSBuildProjectDirectory)\include;$(SolutionDir)\3party\include\boost-1.56;$(SolutionDir)\3party\include\gsl-1.16;$(MSBuildProjectDirectory);$(MSBuildProjectDirectory)\src;$(MSBuildProjectDirectory)\src\advisor;$(MSBuildProjectDirectory)\src\tower;$(MSBuildProjectDirectory)\src\historian;$(MSBuildProjectDirectory)\src\tower-config;$(MSBuildProjectDirectory)\src\tower-report;$(MSBuildProjectDirectory)\depreciating;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DACORE_EXPORTS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);libdacore_EXPORTS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>-Zm512 %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4275</DisableSpecificWarnings>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>gsl.lib;cblas.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(SolutionDir)\3party\lib\Debug\boost-1.56;$(SolutionDir)\3party\lib\Debug\gsl-1.16</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DACORE_EXPORTS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);libdacore_EXPORTS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalOptions>-Zm512 %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4275</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>gsl.lib;cblas.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(SolutionDir)\3party\lib\Release\boost-1.56;$(SolutionDir)\3party\lib\Release\gsl-1.16</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\IAdvice.h" />
+    <ClInclude Include="include\IOverride.h" />
+    <ClInclude Include="include\IOverrides.h" />
+    <ClInclude Include="include\IBottoms.h" />
+    <ClInclude Include="include\IColumn.h" />
+    <ClInclude Include="include\IComposition.h" />
+    <ClInclude Include="include\IControlLimits.h" />
+    <ClInclude Include="include\IEnumerator.h" />
+    <ClInclude Include="include\IExternalReflux.h" />
+    <ClInclude Include="include\IFeed.h" />
+    <ClInclude Include="include\IFeeds.h" />
+    <ClInclude Include="include\IHasComposition.h" />
+    <ClInclude Include="include\IHeatingMediumFeed.h" />
+    <ClInclude Include="include\IHistorian.h" />
+    <ClInclude Include="include\IInstrumentsData.h" />
+    <ClInclude Include="include\ILabResultsData.h" />
+    <ClInclude Include="include\IManager.h" />
+    <ClInclude Include="include\IOverhead.h" />
+    <ClInclude Include="include\IOverridesData.h" />
+    <ClInclude Include="include\IReboiler.h" />
+    <ClInclude Include="include\IReportItem.h" />
+    <ClInclude Include="include\ISerialize.h" />
+    <ClInclude Include="include\ITower.h" />
+    <ClInclude Include="include\ITowerConfig.h" />
+    <ClInclude Include="include\ITowerData.h" />
+    <ClInclude Include="include\ITowerReport.h" />
+    <ClInclude Include="include\ITowers.h" />
+    <ClInclude Include="include\dacommon.h" />
+    <ClInclude Include="src\advisor\Advice.h" />
+    <ClInclude Include="src\advisor\AdviceMessage.h" />
+    <ClInclude Include="src\advisor\Override.h" />
+    <ClInclude Include="src\advisor\Overrides.h" />
+    <ClInclude Include="src\advisor\Advisor.h" />
+    <ClInclude Include="src\advisor\AdvisorFactory.h" />
+    <ClInclude Include="src\advisor\IAlgorithm.h" />
+    <ClInclude Include="src\advisor\Scenario1.h" />
+    <ClInclude Include="src\advisor\Scenario2.h" />
+    <ClInclude Include="src\advisor\Scenario3.h" />
+    <ClInclude Include="src\advisor\Scenario4.h" />
+    <ClInclude Include="src\advisor\Scenario5.h" />
+    <ClInclude Include="src\advisor\Scenario6.h" />
+    <ClInclude Include="src\advisor\Scenario7.h" />
+    <ClInclude Include="src\advisor\Scenario8.h" />
+    <ClInclude Include="src\advisor\Scenario9.h" />
+    <ClInclude Include="src\advisor\ScenarioInactive.h" />
+    <ClInclude Include="src\advisor\ScenarioIncomplete.h" />
+    <ClInclude Include="src\advisor\ScenarioNoAdvice.h" />
+    <ClInclude Include="src\advisor\ScenarioUnstable.h" />
+    <ClInclude Include="src\advisor\SecondaryAdviceForPressure.h" />
+    <ClInclude Include="src\historian\HistorianBase.h" />
+    <ClInclude Include="src\historian\HistorianFactory.h" />
+    <ClInclude Include="src\historian\InstrumentsData.h" />
+    <ClInclude Include="src\historian\LabResultsData.h" />
+    <ClInclude Include="src\historian\OverridesData.h" />
+    <ClInclude Include="src\historian\TowerData.h" />
+    <ClInclude Include="src\historian\TowerDataFactory.h" />
+    <ClInclude Include="src\Manager.h" />
+    <ClInclude Include="src\Notify.h" />
+    <ClInclude Include="src\tower-config\Bottoms.h" />
+    <ClInclude Include="src\tower-config\Column.h" />
+    <ClInclude Include="src\tower-config\Composition.h" />
+    <ClInclude Include="src\tower-config\ControlLimits.h" />
+    <ClInclude Include="src\tower-config\ExternalReflux.h" />
+    <ClInclude Include="src\tower-config\Feed.h" />
+    <ClInclude Include="src\tower-config\Feeds.h" />
+    <ClInclude Include="src\tower-config\HeatingMediumFeed.h" />
+    <ClInclude Include="src\tower-config\Overhead.h" />
+    <ClInclude Include="src\tower-config\Reboiler.h" />
+    <ClInclude Include="src\tower-config\TowerConfig.h" />
+    <ClInclude Include="src\tower-config\TowerConfigFactory.h" />
+    <ClInclude Include="src\tower-report\DTDeltaReportItem.h" />
+    <ClInclude Include="src\tower-report\DTFeedReportItem.h" />
+    <ClInclude Include="src\tower-report\DTHeatingReportItem.h" />
+    <ClInclude Include="src\tower-report\DTHeavyKeyReportItem.h" />
+    <ClInclude Include="src\tower-report\DTLightKeyReportItem.h" />
+    <ClInclude Include="src\tower-report\DTOperatingPressureReportItem.h" />
+    <ClInclude Include="src\tower-report\DTOutputOnPICReportItem.h" />
+    <ClInclude Include="src\tower-report\DTRefluxReportItem.h" />
+    <ClInclude Include="src\tower-report\ReportItem.h" />
+    <ClInclude Include="src\tower-report\TowerReport.h" />
+    <ClInclude Include="src\tower-report\TowerReportFactory.h" />
+    <ClInclude Include="src\tower\DistillationTower.h" />
+    <ClInclude Include="src\tower\TowerFactory.h" />
+    <ClInclude Include="src\tower\Towers.h" />
+    <ClInclude Include="src\Validate.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DACore.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\advisor\Advisor.cpp" />
+    <ClCompile Include="src\advisor\IAlgorithm.cpp" />
+    <ClCompile Include="src\Manager.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\Notify.cpp" />
+    <ClCompile Include="src\Serialize.cpp" />
+    <ClCompile Include="src\Validate.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="Debug\tower-1.json" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
