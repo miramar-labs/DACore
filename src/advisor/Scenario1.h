@@ -54,8 +54,8 @@ namespace dacore {
 
 				if (tower->getConfig()->isMaximizingFeed())
 					messagePrefix = "Decrease feed. If not possible, consider trying: ";
-				else
-					messagePrefix = "Consider trying: ";
+				//else
+				//	messagePrefix = "Consider trying: ";
 
 				AdviceMessage m(tower);
 				std::string msg = messagePrefix + m.getMessage(IAdvice::MessageType::DECREASE_BOTH_REBOIL_AND_REFLUX);

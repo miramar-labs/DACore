@@ -33,8 +33,8 @@ namespace dacore{
 
 	//TODO: exception handling, template paramaterization
 
-	static const std::string TOWER_DATA_DIR = "./data/towers/";
-	static const std::string HISTORIAN_DATA_DIR = "./data/historians/";
+	static const char *TOWER_DATA_DIR = "./data/towers/";
+	static const char *HISTORIAN_DATA_DIR = "./data/historians/";
 
 	const std::string towerFilename(ITower* tower){
 		std::ostringstream sstrm;
@@ -49,9 +49,6 @@ namespace dacore{
 	}
 
 	Manager::~Manager(){
-
-		saveTowers();
-		saveHistorians();
 
 		for (std::map<TowerId, ITower*>::iterator it = mTowers.begin(); it != mTowers.end(); ++it){
 			ITower* tower = (*it).second;
@@ -90,7 +87,7 @@ namespace dacore{
 				{
 					boost::property_tree::ptree pt;
 					std::string fname = dir_iter->path().string();
-					const std::string prefix = TOWER_DATA_DIR + "tower-";
+					const std::string prefix = std::string(TOWER_DATA_DIR) + "tower-";
 					const std::string postfix = ".json";
 					if (boost::starts_with(fname, prefix) &&
 						boost::ends_with(fname, postfix)){
@@ -108,17 +105,20 @@ namespace dacore{
 	}
 
 	void Manager::saveTowers(){
-		std::vector<TowerId> towers;
-		enumerateTowers(towers);
-		for (std::vector<TowerId>::iterator it = towers.begin(); it != towers.end(); ++it)
-			saveTower(*it);
+		for (std::map<TowerId, ITower*>::iterator it = mTowers.begin(); it != mTowers.end(); ++it)
+			saveTower((*it).first);
 	}
 
 	bool Manager::saveTower(TowerId id){
+		std::cout << boost::filesystem::current_path() << std::endl;
 		ITower* tower = getTower(id);
 		if (tower){
 			boost::property_tree::ptree pt;
 			tower->serialize(pt);
+			if (!(boost::filesystem::exists(TOWER_DATA_DIR) && boost::filesystem::is_directory(TOWER_DATA_DIR))){
+				if (!boost::filesystem::create_directory(TOWER_DATA_DIR))
+					return false;
+			}
 			write_json(towerFilename(tower), pt, std::locale(), false);
 		}
 		return true;
@@ -196,7 +196,7 @@ namespace dacore{
 				{
 					boost::property_tree::ptree pt;
 					std::string fname = dir_iter->path().string();
-					const std::string prefix = HISTORIAN_DATA_DIR + "historian-";
+					const std::string prefix = std::string(HISTORIAN_DATA_DIR) + "historian-";
 					const std::string postfix = ".json";
 					if (boost::starts_with(fname, prefix) &&
 						boost::ends_with(fname, postfix)){
@@ -214,21 +214,22 @@ namespace dacore{
 	}
 
 	void Manager::saveHistorians(){
-		for (std::map<HistorianId, IHistorian*>::iterator it = mHistorians.begin(); it != mHistorians.end(); ++it){
-			boost::property_tree::ptree pt;
-			IHistorian* historian = (*it).second;
-			historian->serialize(pt);
-			write_json(historianFilename(historian), pt, std::locale(), false);
-		}
+		for (std::map<HistorianId, IHistorian*>::iterator it = mHistorians.begin(); it != mHistorians.end(); ++it)
+			saveHistorian((*it).first);
 	}
 
 	bool Manager::saveHistorian(HistorianId id){
+		std::cout << boost::filesystem::current_path() << std::endl;
 		if (mHistorians.find(id) == mHistorians.end())
 			return false;
 		std::map<HistorianId, IHistorian*>::iterator it = mHistorians.find(id);
 		boost::property_tree::ptree pt;
 		IHistorian* historian = (*it).second;
 		historian->serialize(pt);
+		if (!(boost::filesystem::exists(HISTORIAN_DATA_DIR) && boost::filesystem::is_directory(HISTORIAN_DATA_DIR))){
+			if (!boost::filesystem::create_directory(HISTORIAN_DATA_DIR))
+				return false;
+		}
 		write_json(historianFilename(historian), pt, std::locale(), false);
 		return true;
 	}

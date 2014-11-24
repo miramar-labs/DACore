@@ -59,10 +59,8 @@ namespace dacore {
 				return "DISTILLATION";
 //			case AMINE_ABSORBER:
 //				return "AMINE_ABSORBER";
-#ifdef UNIT_TESTING
 			case DTPRIME:
 				return "DTPRIME";
-#endif
 			default:
 				return "...";
 			}

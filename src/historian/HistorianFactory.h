@@ -39,7 +39,7 @@ namespace dacore {
 		static IHistorian* createPI(){
 
 			IHistorian* historian = new HistorianBase();     //TODO - no subclasses yet, use base for now !!
-
+			historian->setType(IHistorian::Type::PI);
 			ITowers* towers = new Towers();
 			historian->setTowers(towers);
 

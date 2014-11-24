@@ -41,9 +41,7 @@ class IComposition;
 
 		enum Type { DISTILLATION
 //					,AMINE_ABSORBER
-#ifdef UNIT_TESTING
-					,DTPRIME
-#endif
+					,DTPRIME				//TODO: remove this
 				  };
 
 		virtual ITower::Type getType() = 0;

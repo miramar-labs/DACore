@@ -22,8 +22,6 @@ namespace dacore {
 	class TowerFactory {
 
 		friend class IManager;
-		friend class UnitTests;
-		friend class AlgorithmUnitTests;
 
 	public:
 
@@ -31,10 +29,8 @@ namespace dacore {
 			switch (type){
 			case ITower::Type::DISTILLATION:
 				return TowerFactory::createDT(id);
-#ifdef UNIT_TESTING
 			case ITower::Type::DTPRIME:
 				return TowerFactory::createDTPrime(id);
-#endif
 			default:
 				return nullptr;
 			}
