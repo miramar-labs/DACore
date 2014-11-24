@@ -1,5 +1,5 @@
 My Notes:
-0. The DA PUBLIC API will comprise of a Release-built DLL and ALL of the files in DACore\include.
+0. The DA PUBLIC API will comprise of a Release-built DLL and the files in DACore\include.
 NOTHING more than that. 
 Everything else is PRIVATE implementation.
 
