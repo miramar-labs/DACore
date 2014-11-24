@@ -5,7 +5,7 @@
 
 namespace dacore {
 
-	class  ISerialize
+	class DACORE_API ISerialize
 	{
 		friend class Manager;
 #ifdef UNIT_TESTING		
