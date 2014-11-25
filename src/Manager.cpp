@@ -33,8 +33,8 @@ namespace dacore{
 
 	//TODO: exception handling, template paramaterization
 
-	static const char *TOWER_DATA_DIR = "./data/towers/";
-	static const char *HISTORIAN_DATA_DIR = "./data/historians/";
+	static const char *TOWER_DATA_DIR = ".\\data\\towers\\";
+	static const char *HISTORIAN_DATA_DIR = ".\\data\\historians\\";
 
 	const std::string towerFilename(ITower* tower){
 		std::ostringstream sstrm;

@@ -41,6 +41,7 @@ namespace dacore {
 	static double RANGE_HIGH = 1.2;     //TODO - pull from config
 	static double RANGE_LOW = -0.2;     //TODO - pull from config
 
+
 	const std::string ScenarioIncomplete::mID = "Incomplete";
 	const std::string ScenarioInactive::mID = "Inactive";
 	const std::string ScenarioUnstable::mID = "Unstable";

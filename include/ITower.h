@@ -17,7 +17,7 @@ namespace dacore {
 //helpers (t=ITower*):
 #define CONFIG(t) t->getConfig()
 #define DATA(t) t->getData()
-#define DATA_PINST(t) t->getData()->getPrimaryInstruments()
+#define PRIMARY_INSTRUMENTS(t) t->getData()->getPrimaryInstruments()
 #define OVERHEAD_COMPOSITION(t) t->getConfig()->getOverhead()->getComposition()
 #define OVERRIDES(t) t->getConfig()->getOverrides()
 #define CONTROL_LIMITS(t) t->getConfig()->getControlLimits()
