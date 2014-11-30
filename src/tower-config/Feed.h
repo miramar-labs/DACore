@@ -19,10 +19,13 @@ namespace dacore {
 
 	public:
 		Feed(FeedId id = 0):mID(id){
+
+			mFactor = Validate::INVALID_DBL;
+
 			Validate::registerStrPattern(IFeed_name, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
 			Validate::registerStrPattern(IFeed_instrumentTag, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
 			Validate::registerStrPattern(IFeed_engUnit, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
-			Validate::registerNumPattern(IFeed_factor, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IFeed_factor, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
 		}
 		virtual ~Feed(){}
 

@@ -2,15 +2,12 @@
 #define DA_VALIDATE_H
 
 #include "stdafx.h"
+#include "IValidate.h"
 
 namespace dacore {
 
-	class Validate {
+	class Validate : public IValidate {
 	public:
-
-		static const std::string REGEX_ALPHA_NUM;
-		static const std::string INVALID_STR;
-		static const double INVALID_DBL;
 
 		static void registerStrPattern(const std::string& id, std::tuple<std::string, std::string, std::string> pattern);
 		static void registerNumPattern(const std::string& id, std::tuple<double, double, double, double> pattern);

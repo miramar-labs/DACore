@@ -32,23 +32,37 @@ namespace dacore {
 		virtual ForecastingTimeline getForecastingTimeline(){ return mForecastingTimeline; }
 		virtual void setForecastingTimeline(ForecastingTimeline tl){ mForecastingTimeline = tl; }
 
+		const char* IColumn_isSuggestChanges = "Column.isSuggestChanges";
+		virtual bool isSuggestChanges() { return mSuggestChanges; }
+		virtual void setIsSuggestChanges(bool suggest) { mSuggestChanges = suggest; }
+
+		const char* IColumn_isPressureReverseActing = "Column.isPressureReverseActing";
+		virtual bool isPressureReverseActing() { return mPressureReverseActing; }
+		virtual void setIsPressureReverseActing(bool revActing) {mPressureReverseActing = revActing;}
+
 	protected:
 		bool                mUsingOHK;
 		DeltaOption         mDeltaOption;
 		ForecastingTimeline mForecastingTimeline;
+		bool				mSuggestChanges;
+		bool				mPressureReverseActing;
 
 	public://protected:
 		//ISerialize:
 		virtual void serialize(boost::property_tree::ptree& pt){
 			pt.put(IColumn_isUsingOvhToDetermineLoading, mUsingOHK);
-			pt.put(IColumn_usePressureOrTempDelta, (int)mDeltaOption); //CHECK CAST
-			pt.put(IColumn_forecatsingTimeline, (int)mForecastingTimeline); //CHECK CAST
+			pt.put(IColumn_usePressureOrTempDelta, (int)mDeltaOption); 
+			pt.put(IColumn_forecatsingTimeline, (int)mForecastingTimeline); 
+			pt.put(IColumn_isSuggestChanges, mSuggestChanges);
+			pt.put(IColumn_isPressureReverseActing, mPressureReverseActing);
 		}
 
 		virtual void deserialize(boost::property_tree::ptree& pt){
 			mUsingOHK = pt.get<bool>(IColumn_isUsingOvhToDetermineLoading);
-			mDeltaOption = (DeltaOption)pt.get<int>(IColumn_usePressureOrTempDelta); //CHECK CAST
-			mForecastingTimeline = (ForecastingTimeline)pt.get<int>(IColumn_forecatsingTimeline); //CHECK CAST
+			mDeltaOption = (DeltaOption)pt.get<int>(IColumn_usePressureOrTempDelta); 
+			mForecastingTimeline = (ForecastingTimeline)pt.get<int>(IColumn_forecatsingTimeline); 
+			mSuggestChanges = pt.get<bool>(IColumn_isSuggestChanges);
+			mPressureReverseActing = pt.get<bool>(IColumn_isPressureReverseActing);
 		}
 	};
 

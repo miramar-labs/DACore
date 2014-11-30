@@ -19,11 +19,15 @@ namespace dacore {
 
 	public:
 		HeatingMediumFeed(FeedId id = 0) :mID(id){
+
+			mFactor = Validate::INVALID_DBL;
+			mBtuPerUnit = Validate::INVALID_DBL;
+
 			Validate::registerStrPattern(IHeatingMediumFeed_name, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
 			Validate::registerStrPattern(IHeatingMediumFeed_instrumentTag, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
 			Validate::registerStrPattern(IHeatingMediumFeed_engUnit, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
-			Validate::registerNumPattern(IHeatingMediumFeed_factor, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IHeatingMediumFeed_btuPerUnit, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IHeatingMediumFeed_factor, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IHeatingMediumFeed_btuPerUnit, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
 		}
 
 		virtual ~HeatingMediumFeed(){}

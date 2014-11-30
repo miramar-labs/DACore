@@ -22,9 +22,9 @@ namespace dacore {
 
 	public:
 		Composition(const std::string& prefix)
-			:mPrefix(prefix){
+			:mPrefix(prefix), mInstabilityValPercent(Validate::INVALID_DBL){
 
-			Validate::registerNumPattern(mPrefix + IComposition_instabilityValPercent, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(mPrefix + IComposition_instabilityValPercent, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
 
 			Validate::registerStrPattern(mPrefix + IComposition_heavyKey, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
 			Validate::registerStrPattern(mPrefix + IComposition_heavyKeyUnit, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));

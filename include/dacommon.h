@@ -35,5 +35,6 @@
 #include <boost/property_tree/ptree.hpp>
 
 #include "ISerialize.h"
+#include "IValidate.h"
 
 #endif

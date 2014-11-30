@@ -11,6 +11,7 @@
 
 #include "stdafx.h"
 
+#include "IValidate.h"
 #include "IControlLimits.h"
 
 namespace dacore {
@@ -19,23 +20,41 @@ namespace dacore {
 
 	public:
 		ControlLimits(){
-			Validate::registerNumPattern(IControlLimits_hk_min, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_lk_min, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_delta_min, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_reflux_min, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_feed_min, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_heatingMediumFlow_min, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_operatingPressure_min, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_pressureController_min, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
+			mHKMin = Validate::INVALID_DBL;
+			mLKMin = Validate::INVALID_DBL;
+			mDeltaMin = Validate::INVALID_DBL;
+			mRefluxMin = Validate::INVALID_DBL;
+			mFeedMin = Validate::INVALID_DBL;
+			mHeatingMediumFlowMin = Validate::INVALID_DBL;
+			mOpPressureMin = Validate::INVALID_DBL;
+			mPressureControllerMin = Validate::INVALID_DBL;
 
-			Validate::registerNumPattern(IControlLimits_hk_max, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_lk_max, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_delta_max, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_reflux_max, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_feed_max, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_heatingMediumFlow_max, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_operatingPressure_max, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
-			Validate::registerNumPattern(IControlLimits_pressureController_max, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
+			mHKMax = Validate::INVALID_DBL;
+			mLKMax = Validate::INVALID_DBL;
+			mDeltaMax = Validate::INVALID_DBL;
+			mRefluxMax = Validate::INVALID_DBL;
+			mFeedMax = Validate::INVALID_DBL;
+			mHeatingMediumFlowMax = Validate::INVALID_DBL;
+			mOpPressureMax = Validate::INVALID_DBL;
+			mPressureControllerMax = Validate::INVALID_DBL;
+
+			Validate::registerNumPattern(IControlLimits_hk_min, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_lk_min, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_delta_min, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_reflux_min, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_feed_min, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_heatingMediumFlow_min, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_operatingPressure_min, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_pressureController_min, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+
+			Validate::registerNumPattern(IControlLimits_hk_max, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_lk_max, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_delta_max, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_reflux_max, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_feed_max, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_heatingMediumFlow_max, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_operatingPressure_max, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IControlLimits_pressureController_max, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
 
 		}
 

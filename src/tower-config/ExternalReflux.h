@@ -21,11 +21,13 @@ namespace dacore {
 		ExternalReflux()
 			:mRefluxIncMethod(IncreaseMethod::REFLUX_INC_METHOD_OTHER), mRefluxDecMethod(DecreaseMethod::REFLUX_DEC_METHOD_OTHER){
 
+			mFlowFactor = Validate::INVALID_DBL;
+
 			Validate::registerStrPattern(IExternalReflux_incMethodOther, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
 			Validate::registerStrPattern(IExternalReflux_decMethodOther, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
 			Validate::registerStrPattern(IExternalReflux_flowTag, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
 			Validate::registerStrPattern(IExternalReflux_flowUnit, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
-			Validate::registerNumPattern(IExternalReflux_flowFactor, std::tuple<double, double, double, double>(0, std::numeric_limits<double>::max(), 0, Validate::INVALID_DBL));
+			Validate::registerNumPattern(IExternalReflux_flowFactor, std::tuple<double, double, double, double>(0, Validate::MAX_DBL, 0, Validate::INVALID_DBL));
 		}
 
 		virtual ~ExternalReflux(){}

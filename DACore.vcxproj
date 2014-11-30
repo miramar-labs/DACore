@@ -121,6 +121,7 @@
     <ClInclude Include="include\ITowerReport.h" />
     <ClInclude Include="include\ITowers.h" />
     <ClInclude Include="include\dacommon.h" />
+    <ClInclude Include="include\IValidate.h" />
     <ClInclude Include="src\advisor\Advice.h" />
     <ClInclude Include="src\advisor\AdviceMessage.h" />
     <ClInclude Include="src\advisor\Override.h" />

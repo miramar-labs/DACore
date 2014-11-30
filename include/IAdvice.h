@@ -37,6 +37,7 @@ namespace dacore {
 		virtual void            setPrimaryMessage(const std::string& msg) = 0;
 
 		virtual std::string     getSecondaryMessage() = 0;
+		virtual void            setSecondaryMessage(const std::string& msg) = 0;
 
 		virtual std::string     getTertiaryMessage() = 0;
 

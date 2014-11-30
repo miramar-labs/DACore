@@ -31,6 +31,12 @@ namespace dacore {
 
 		virtual ForecastingTimeline getForecastingTimeline() = 0;
 		virtual void setForecastingTimeline(ForecastingTimeline tl) = 0;
+
+		virtual bool isSuggestChanges() = 0;
+		virtual void setIsSuggestChanges(bool suggest) = 0;
+
+		virtual bool isPressureReverseActing() = 0;
+		virtual void setIsPressureReverseActing(bool revActing) = 0;
 	};
 
 }

@@ -23,6 +23,8 @@
 #include <tuple>
 #include <sstream>
 
+using namespace std;
+
 //BOOST
 #include <boost/signals2.hpp>
 #include <boost/filesystem.hpp>
