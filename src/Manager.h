@@ -35,6 +35,8 @@ namespace dacore {
 
 		virtual bool			removeTowerFromHistorian(HistorianId hid, TowerId tid);
 
+		virtual bool			addTowerToHistorian(HistorianId hid, TowerId tid);
+
 	//Historian:
 		virtual HistorianId		createHistorian(IHistorian::Type type = IHistorian::Type::PI);
 

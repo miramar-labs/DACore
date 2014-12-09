@@ -305,4 +305,18 @@ namespace dacore{
 		return false;
 	}
 
+	bool Manager::addTowerToHistorian(HistorianId hid, TowerId tid) 
+	{
+		// this should fail if the tower is already referenced by another historian (1-1 rule)
+		IHistorian* h = getHistorianOfTower(tid);
+		if (h == nullptr){
+			h = getHistorian(hid);
+			if (h == nullptr)
+				return false; // no such historian
+			h->getTowers()->add(tid);
+			return true;
+		}
+		// already in use...
+		return false;
+	}
 }// namespace

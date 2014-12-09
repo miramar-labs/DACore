@@ -58,6 +58,10 @@ namespace dacore {
 		virtual void			enumerateHistorians(std::vector<HistorianId>& hids) = 0;
 
 		/*
+			associates a tower with a historian
+		*/
+		virtual bool			addTowerToHistorian(HistorianId hid, TowerId tid) = 0;  
+		/*
 			de-associates a tower from a historian 
 		*/
 		virtual bool			removeTowerFromHistorian(HistorianId hid, TowerId tid) = 0;
