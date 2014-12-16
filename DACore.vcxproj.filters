@@ -317,5 +317,6 @@
     <None Include="ClassDiagram.cd" />
     <None Include=".gitignore" />
     <None Include=".gitattributes" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
 </Project>

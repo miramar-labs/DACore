@@ -80,9 +80,9 @@ namespace dacore {
 	public://protected:
 		//ISerialize:
 		virtual void serialize(boost::property_tree::ptree& pt){
-			ISerialize::serializeObj(pt, ITower_data, mTowerData);
+			//ISerialize::serializeObj(pt, ITower_data, mTowerData);
 			ISerialize::serializeObj(pt, ITower_config, mTowerConfig);
-			ISerialize::serializeObj(pt, ITower_report, mTowerReport);
+			//ISerialize::serializeObj(pt, ITower_report, mTowerReport);
 			pt.put(ITower_name, mName);
 			pt.put("Tower.id", mID);
 			pt.put("Tower.type", mType);
@@ -90,9 +90,9 @@ namespace dacore {
 		}
 
 		virtual void deserialize(boost::property_tree::ptree& pt){
-			ISerialize::deserializeObj(pt, ITower_data, mTowerData);
+			//ISerialize::deserializeObj(pt, ITower_data, mTowerData);
 			ISerialize::deserializeObj(pt, ITower_config, mTowerConfig);
-			ISerialize::deserializeObj(pt, ITower_report, mTowerReport);
+			//ISerialize::deserializeObj(pt, ITower_report, mTowerReport);
 			mName = pt.get<std::string>(ITower_name);
 			mID = pt.get<TowerId>("Tower.id");
 			mType = (ITower::Type)pt.get<int>("Tower.type");

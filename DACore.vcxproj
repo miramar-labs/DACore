@@ -211,6 +211,7 @@
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
     <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Debug\tower-1.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

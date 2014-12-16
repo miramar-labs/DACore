@@ -1,0 +1,620 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="dacore::IAdvice" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAIAADAAAAAAAAAAQAAAAAAAACKAAoEBAACACA=</HashCode>
+      <FileName>include\IAdvice.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IOverride" Collapsed="true">
+    <Position X="26" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAQAAAEQAAAQAgAAAAAARAAAAAAAQEgAAiAAA=</HashCode>
+      <FileName>include\IOverride.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IOverrides" Collapsed="true">
+    <Position X="32.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAEBAAAQAAAAAQAAAAAiAAAAAACAAA=</HashCode>
+      <FileName>include\IOverrides.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IComposition" Collapsed="true">
+    <Position X="35" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAgEBJgABAAAQAQgAgAEACBAAAAAAEARiACAAgIyg=</HashCode>
+      <FileName>include\IComposition.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IReboiler" Collapsed="true">
+    <Position X="41.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQEAAAAFAAAQAAAAAAAAAABAAAQQAABAAAgA=</HashCode>
+      <FileName>include\IReboiler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IFeeds" Collapsed="true">
+    <Position X="48.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAQAAEBAAAQAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>include\IFeeds.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IBottoms" Collapsed="true">
+    <Position X="28.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABEAAAAAAAAAAAAAAAABAACACAAQAAABAAACAAAgA=</HashCode>
+      <FileName>include\IBottoms.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IColumn" Collapsed="true">
+    <Position X="59.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIAAAAAAAAAAAARgAAAAAAAAAAAIAAAAgCAAAAIAAAA=</HashCode>
+      <FileName>include\IColumn.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IControlLimits" Collapsed="true">
+    <Position X="62" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AcAAgAAKgACKAggEEAARADRQCCiMACAAAAAAAUAAQgA=</HashCode>
+      <FileName>include\IControlLimits.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IExternalReflux" Collapsed="true">
+    <Position X="64.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAQEEABBFAAAEAAAAAIgBAABAEARQAABAAAAA=</HashCode>
+      <FileName>include\IExternalReflux.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IFeed" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAgAAAAQAAAAAQAAAAAAAAAARAEBEBAQAAEAAAAAAA=</HashCode>
+      <FileName>include\IFeed.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IHasComposition" Collapsed="true">
+    <Position X="29.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAgAAABAAAAAAAAAACAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>include\IHasComposition.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IHeatingMediumFeed" Collapsed="true">
+    <Position X="3.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAEAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\IHeatingMediumFeed.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ITowers" Collapsed="true">
+    <Position X="37.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAQAAEBAAAQAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>include\ITowers.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IHistorian" Collapsed="true">
+    <Position X="44" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAEQAAAAACAAAAAAIRCAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>include\IHistorian.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IInstrumentsData" Collapsed="true">
+    <Position X="50.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAQAIAgAAAADIAAAAAEAAQAAAAAAUgCAAAAAAg=</HashCode>
+      <FileName>include\IInstrumentsData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ILabResultsData" Collapsed="true">
+    <Position X="55.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAABCAAAAAAAAAAAAIAACAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>include\ILabResultsData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IOverhead" Collapsed="true">
+    <Position X="30.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\IOverhead.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IManager" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQAAAAAACgAQIAAAAQAZCEQAAQQAAAAACAAAAAAAAAQ=</HashCode>
+      <FileName>include\IManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IOverridesData" Collapsed="true">
+    <Position X="66.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAECAAAAABAAiAAAAAAAAAAgABEAAAAAAgCRAAAAAA=</HashCode>
+      <FileName>include\IOverridesData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IReportItem" Collapsed="true">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAwAAAAAAAAAAAAAQgAAIABDEiCgACAAAAIgAA=</HashCode>
+      <FileName>include\IReportItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ISerialize" Collapsed="true">
+    <Position X="35" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAIAAAAAAAQAAAQAAAAAAAAAA=</HashCode>
+      <FileName>include\ISerialize.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Manager" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQAAAAAACgAQIAAAAQAZCEQAAQQAAAAACAAAAAAAgAQ=</HashCode>
+      <FileName>src\Manager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ITowerData" Collapsed="true">
+    <Position X="39.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAQQQAAFAIBUQUAAAAQAAAAAAAAAAAgAIgAEABAA=</HashCode>
+      <FileName>include\ITowerData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ITowerReport" Collapsed="true">
+    <Position X="46.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQBQIABAAAUUQAAAAAACAAABAgAGACAAAAAAIAA=</HashCode>
+      <FileName>include\ITowerReport.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ITowerConfig" Collapsed="true">
+    <Position X="53" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAIAAIAEAGAAABCCAgAAACEAARAAAghIAAAEAAFYIAA=</HashCode>
+      <FileName>include\ITowerConfig.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ITower" Collapsed="true">
+    <Position X="57.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkEQAASAAAgAIAAAACAAAAAAARAAAABAAAAEAAAAAAA=</HashCode>
+      <FileName>include\ITower.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IValidate" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAgAAAAAAAACAAAAAAAAAAAAACAAEAAAA=</HashCode>
+      <FileName>include\IValidate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Advice" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAgAAIAADAEIAEgAAAARAAAAAAAgKKAAgEBEAGACA=</HashCode>
+      <FileName>src\advisor\Advice.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::AdviceMessage" Collapsed="true">
+    <Position X="69" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEBAAAAAAFAAAAAAJAAAQABAAAAAQAAAAAAgAAA=</HashCode>
+      <FileName>src\advisor\AdviceMessage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Override" Collapsed="true">
+    <Position X="26" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAFAgEwQAAEQAAAQAgIAAAAAQEAAAAQAwEoBAiAAA=</HashCode>
+      <FileName>src\advisor\Override.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Overrides" Collapsed="true">
+    <Position X="32.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAQAAEBAAAYAAAAAQAAAAASAAAAAACAAA=</HashCode>
+      <FileName>src\advisor\Overrides.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Advisor" Collapsed="true">
+    <Position X="70.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>src\advisor\Advisor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::AdvisorFactory" Collapsed="true">
+    <Position X="72.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>src\advisor\AdvisorFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::IAlgorithm" Collapsed="true">
+    <Position X="16.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAgwABBAAACAAAEAAAAAAAAAgACQAAAAAAAAAgICA=</HashCode>
+      <FileName>src\advisor\IAlgorithm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Scenario1" Collapsed="true">
+    <Position X="13" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAQAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\advisor\Scenario1.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Scenario2" Collapsed="true">
+    <Position X="17.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAIAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\advisor\Scenario2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Scenario3" Collapsed="true">
+    <Position X="22" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAEAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\advisor\Scenario3.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Scenario4" Collapsed="true">
+    <Position X="26.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\advisor\Scenario4.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Scenario5" Collapsed="true">
+    <Position X="31" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\advisor\Scenario5.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Scenario6" Collapsed="true">
+    <Position X="1.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\advisor\Scenario6.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Scenario7" Collapsed="true">
+    <Position X="4" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAEAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\advisor\Scenario7.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Scenario8" Collapsed="true">
+    <Position X="6.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAIAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\advisor\Scenario8.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Scenario9" Collapsed="true">
+    <Position X="8.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\advisor\Scenario9.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ScenarioInactive" Collapsed="true">
+    <Position X="10.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAABAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\advisor\ScenarioInactive.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ScenarioIncomplete" Collapsed="true">
+    <Position X="15.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>src\advisor\ScenarioIncomplete.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ScenarioNoAdvice" Collapsed="true">
+    <Position X="19.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>src\advisor\ScenarioNoAdvice.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ScenarioUnstable" Collapsed="true">
+    <Position X="24.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAACAAAAAAAAEAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\advisor\ScenarioUnstable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::SecondaryAdviceForPressure" Collapsed="true">
+    <Position X="28.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAAAIAAABAAAA=</HashCode>
+      <FileName>src\advisor\SecondaryAdviceForPressure.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::HistorianBase" Collapsed="true">
+    <Position X="44" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgAAEAAAAAEQAAMAACAAIBAAARCAAAgBQAAAAAAAAAA=</HashCode>
+      <FileName>src\historian\HistorianBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::HistorianFactory" Collapsed="true">
+    <Position X="69" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>src\historian\HistorianFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::InstrumentsData" Collapsed="true">
+    <Position X="50.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAQAIBgAAAIDIACIAAAAARAAEAAQUgCCACAAQg=</HashCode>
+      <FileName>src\historian\InstrumentsData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::LabResultsData" Collapsed="true">
+    <Position X="55.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EABBCACAAAAAAAAAAIAQKAAAAAAAAAAASAAAAAAAAAA=</HashCode>
+      <FileName>src\historian\LabResultsData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::OverridesData" Collapsed="true">
+    <Position X="66.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAECAAgAABAAiAAARAAIAAAgABAAAAAQAgSVwAAAAA=</HashCode>
+      <FileName>src\historian\OverridesData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::TowerData" Collapsed="true">
+    <Position X="39.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAQwQABBAYBUQVAAAIQABAAAAAAAAQgAIgAMABAA=</HashCode>
+      <FileName>src\historian\TowerData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::TowerDataFactory" Collapsed="true">
+    <Position X="69" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAACAAAAAAAAQAAEAAAABAAACAAAA=</HashCode>
+      <FileName>src\historian\TowerDataFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::TowerFactory" Collapsed="true">
+    <Position X="70.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAEAAAABAAAAAAAA=</HashCode>
+      <FileName>src\tower\TowerFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Towers" Collapsed="true">
+    <Position X="37.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAEEBAAAYAAAAAAAAAAAQAAAAAACAAA=</HashCode>
+      <FileName>src\tower\Towers.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Notify" Collapsed="true">
+    <Position X="70.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAgAAAAAAAAAAAQAAAAAAAQAAAAAA=</HashCode>
+      <FileName>src\Notify.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Bottoms" Collapsed="true">
+    <Position X="28.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAQEAAAwAgAAAAAAYBAACACIEQQAwJQAACAAAhA=</HashCode>
+      <FileName>src\tower-config\Bottoms.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Column" Collapsed="true">
+    <Position X="59.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIAAAAIQAAAAAARgAAEBIAIRAAAIAAAA0SBAAAAAAAA=</HashCode>
+      <FileName>src\tower-config\Column.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Composition" Collapsed="true">
+    <Position X="35" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggE04HRIgEBACwQAYgBgKEECBAAAAQBUQRiICAAyIig=</HashCode>
+      <FileName>src\tower-config\Composition.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ControlLimits" Collapsed="true">
+    <Position X="62" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AcAIgAAKgICKAggkMAgRLnRwCzzOSSBAQAAJA0gAQ4E=</HashCode>
+      <FileName>src\tower-config\ControlLimits.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ExternalReflux" Collapsed="true">
+    <Position X="64.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAEAJiAAQEVABBFAoCEAYBAAAgpAABhEQRQEBhAAAAA=</HashCode>
+      <FileName>src\tower-config\ExternalReflux.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Feed" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABEgABQAAAAAQAAAAAIBEAIRAUBEBAQggUAAAIAAA=</HashCode>
+      <FileName>src\tower-config\Feed.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Feeds" Collapsed="true">
+    <Position X="48.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAQgAEBAAAYAAAAAAAAAAAQgAAAAACAAA=</HashCode>
+      <FileName>src\tower-config\Feeds.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::HeatingMediumFeed" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggQkAAAUAABAAQAAAAAIBAQIRAMBEBAQAgUCAAIAAE=</HashCode>
+      <FileName>src\tower-config\HeatingMediumFeed.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Overhead" Collapsed="true">
+    <Position X="30.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAEAIAgAAAAAAAAIAAAAACACAAAQQEAAAAgAAE=</HashCode>
+      <FileName>src\tower-config\Overhead.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Reboiler" Collapsed="true">
+    <Position X="41.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAQEAAAAFQACQQIAAACAAAABAmQWQAFBAAAAA=</HashCode>
+      <FileName>src\tower-config\Reboiler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::TowerConfig" Collapsed="true">
+    <Position X="53" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBIBAIKEAuAAADGCAgCAIBEKERIoAghKQQiEAAFYICA=</HashCode>
+      <FileName>src\tower-config\TowerConfig.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::TowerConfigFactory" Collapsed="true">
+    <Position X="72.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAEAAAABAAAAAAAA=</HashCode>
+      <FileName>src\tower-config\TowerConfigFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::DTDeltaReportItem" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAwAAAAEAAAAAEAEAAAAACALAgAAAAAAAAIgAA=</HashCode>
+      <FileName>src\tower-report\DTDeltaReportItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::DTFeedReportItem" Collapsed="true">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACAAAAwAAAAEAAAAAAAAAAAAQCALAgAAAAAAAAIgAA=</HashCode>
+      <FileName>src\tower-report\DTFeedReportItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::DTHeatingReportItem" Collapsed="true">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAwAAAgEAAAAAAAAAAAAACALAgAIAAAAAAIgAA=</HashCode>
+      <FileName>src\tower-report\DTHeatingReportItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::DTHeavyKeyReportItem" Collapsed="true">
+    <Position X="14.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAABwQAAAAAAAEAQAAAAAAhAADAgAAAAAAAAIgAA=</HashCode>
+      <FileName>src\tower-report\DTHeavyKeyReportItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::DTLightKeyReportItem" Collapsed="true">
+    <Position X="17" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAABwQAEAAAAAAAQIAAAAABAADAgAAAAAAAAIgAA=</HashCode>
+      <FileName>src\tower-report\DTLightKeyReportItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::DTOperatingPressureReportItem" Collapsed="true">
+    <Position X="19.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAwAAAAEAAAAgAAAAAAABCALAgAAAAAAAAIgAA=</HashCode>
+      <FileName>src\tower-report\DTOperatingPressureReportItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::DTOutputOnPICReportItem" Collapsed="true">
+    <Position X="21.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAQwAAAAEAAIAAAAAAAAAACALAgAAAAAAAAIgAA=</HashCode>
+      <FileName>src\tower-report\DTOutputOnPICReportItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::DTRefluxReportItem" Collapsed="true">
+    <Position X="23.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAwAAAAEAAAAAAAAQAEAACALAgAAAAAAAAIgAA=</HashCode>
+      <FileName>src\tower-report\DTRefluxReportItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::ReportItem" Collapsed="true">
+    <Position X="16" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAABwEIUQAAAMEAAAIQgAAIABDEiCQACAAKIMgAA=</HashCode>
+      <FileName>src\tower-report\ReportItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::TowerReport" Collapsed="true">
+    <Position X="46.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAFBQhQKABACgcUQAAAIAACAAAIAgAGQCAAAAEAIAA=</HashCode>
+      <FileName>src\tower-report\TowerReport.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::TowerReportFactory" Collapsed="true">
+    <Position X="72.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAIAAA=</HashCode>
+      <FileName>src\tower-report\TowerReportFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::DistillationTower" Collapsed="true">
+    <Position X="57.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AsEQEASAAAgAAAYAACAAIBCAARAAAAhAQAgUcCAAAAA=</HashCode>
+      <FileName>src\tower\DistillationTower.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dacore::Validate" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAJAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\Validate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Typedef Name="dacore::OverrideId" Collapsed="true">
+    <Position X="72.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\IOverride.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="dacore::FeedId" Collapsed="true">
+    <Position X="69" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\IFeed.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="dacore::HistorianId" Collapsed="true">
+    <Position X="70.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\IHistorian.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="dacore::TowerId" Collapsed="true">
+    <Position X="69" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\ITower.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
