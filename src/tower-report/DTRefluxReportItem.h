@@ -112,7 +112,7 @@ namespace dacore {
 		virtual double getNext40(){ return mNext40; }//NA
 
 		virtual double getRange(){
-			if (getMin() == 0 || getMax() < 0)
+			if (getMin() == 0 || getMax() < 0 || (getMin() == getMax()))
 				mRange = 0;
 			else
 				mRange = (getCurrent() - getMin()) / (getMax() - getMin());

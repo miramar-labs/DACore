@@ -120,7 +120,7 @@ namespace dacore {
 		virtual double getNext40(){ mNext40 = generateNext(40); return mNext40; }
 
 		virtual double getRange(){
-			if (getMin() < 0 || getMax() < 0)
+			if (getMin() < 0 || getMax() < 0 || (getMin() == getMax()))
 				mRange = 0;
 			else
 				mRange = (getCurrentOrProjected() - getMin()) / (getMax() - getMin());

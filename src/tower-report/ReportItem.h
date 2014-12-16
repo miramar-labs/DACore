@@ -20,8 +20,15 @@ namespace dacore {
 	public:
 
 		ReportItem()
-			:mMin(-1), mMax(-1), mCurrent(-1), mPrior20(-1), mPrior40(-1), mNext20(-1), mNext40(-1), mRange(-1)
-		{}  //TODO check that -1 is a good 'invalid' state for these variables in all scenarios
+			:mMin(IValidate::INVALID_DBL), 
+			mMax(IValidate::INVALID_DBL), 
+			mCurrent(IValidate::INVALID_DBL), 
+			mPrior20(IValidate::INVALID_DBL),
+			mPrior40(IValidate::INVALID_DBL),
+			mNext20(IValidate::INVALID_DBL),
+			mNext40(IValidate::INVALID_DBL),
+			mRange(IValidate::INVALID_DBL)
+		{} 
 
 		virtual ~ReportItem(){}
 
@@ -107,12 +114,12 @@ namespace dacore {
 
 			double c0, c1, cov00, cov01, cov11, chisq;
 
-			if (mPrior20 < 0){
+			if (mPrior20 == IValidate::INVALID_DBL){
 				std::cout << "warning: can't do linear regression without at least prior20 data..." << std::endl;
-				return -1;//TODO think of better way to return error here
+				return IValidate::INVALID_DBL;	//TODO think of better way to return error here
 			}
 
-			if (mPrior40 < 0){
+			if (mPrior40 == IValidate::INVALID_DBL){
 				double x[2] = { -20, 0 };
 				double y[2] = { getPrior20(), getCurrent() };
 				double w[2] = { 1, 1 };
