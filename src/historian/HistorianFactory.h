@@ -30,6 +30,8 @@ namespace dacore {
 			switch (type){
 			case IHistorian::Type::PI:
 				return HistorianFactory::createPI();
+			case IHistorian::Type::IP21:
+				return HistorianFactory::createIP21();
 			default:
 				return nullptr;
 			}
@@ -38,8 +40,18 @@ namespace dacore {
 		//helpers:
 		static IHistorian* createPI(){
 
-			IHistorian* historian = new HistorianBase();     //TODO - no subclasses yet, use base for now !!
+			IHistorian* historian = new HistorianBase();     
 			historian->setType(IHistorian::Type::PI);
+			ITowers* towers = new Towers();
+			historian->setTowers(towers);
+
+			return historian;
+		}
+
+		static IHistorian* createIP21(){
+
+			IHistorian* historian = new HistorianBase();    
+			historian->setType(IHistorian::Type::IP21);
 			ITowers* towers = new Towers();
 			historian->setTowers(towers);
 
