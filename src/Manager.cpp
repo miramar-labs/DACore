@@ -98,10 +98,14 @@ namespace dacore{
 						read_json(fname, pt);
 						ITower* tower = TowerFactory::create();
 						tower->deserialize(pt);
-						if (mTowers.find(tower->getId()) == mTowers.end())
+
+						std::map<TowerId, ITower*>::iterator it = mTowers.find(tower->getId());
+						if (it == mTowers.end())
 							mTowers.insert(std::pair<TowerId, ITower*>(tower->getId(), tower));
-						else
-							std::cout << "WARNING: skipping tower file with duplicate id: " << fname << std::endl;  //TODO throw an exception?
+						else{
+							delete (*it).second;
+							mTowers[tower->getId()] = tower;
+						}
 					}
 				}
 			}
@@ -225,10 +229,13 @@ namespace dacore{
 						read_json(fname, pt);
 						IHistorian* historian = HistorianFactory::create();
 						historian->deserialize(pt);
-						if (mHistorians.find(historian->getId()) == mHistorians.end())
+						std::map<HistorianId, IHistorian*>::iterator it = mHistorians.find(historian->getId());
+						if (it == mHistorians.end())
 							mHistorians.insert(std::pair<HistorianId, IHistorian*>(historian->getId(), historian));
-						else
-							std::cout << "WARNING: skipping historian file with duplicate id: " << fname << std::endl;  //TODO throw an exception?
+						else{
+							delete (*it).second;
+							mHistorians[historian->getId()] = historian;
+						}
 					}
 				}
 			}

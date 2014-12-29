@@ -68,17 +68,8 @@ namespace dacore {
 
 			// set feeds on tower
 			IFeeds* feeds = new Feeds();
-			feeds->add();   // add 3 feeds by default....
-			feeds->add();
-			feeds->add();
+			feeds->add(IFeed::Type::HEATINGMEDIUM);   
 			config->setFeeds(feeds);
-
-			// set heating medium feeds on bottoms:
-			IFeeds* hmfeeds = new Feeds();
-			hmfeeds->add(IFeed::Type::HEATINGMEDIUM);   // add 3 heating medium feeds by default....
-			hmfeeds->add(IFeed::Type::HEATINGMEDIUM);
-			hmfeeds->add(IFeed::Type::HEATINGMEDIUM);
-			bottoms->setHeatingMediumFeeds(hmfeeds);
 
 			IColumn* column = new Column();
 			config->setColumn(column);
