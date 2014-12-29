@@ -63,72 +63,142 @@ namespace dacore {
 
 		const char* IComposition_instabilityValPercent = "_Composition.instabilityValPercent";
 		virtual double getInstabilityValPercent(){ return mInstabilityValPercent; }
-		virtual void setInstabilityValPercent(double val){
-			Validate::validate(mPrefix + IComposition_instabilityValPercent, val);
-			mInstabilityValPercent = val;
+		virtual bool setInstabilityValPercent(double val){
+			try{
+				Validate::validate(mPrefix + IComposition_instabilityValPercent, val);
+				mInstabilityValPercent = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IComposition_heavyKey = "_Composition.hk";
 		virtual std::string getHeavyKey(){ return mHK; }
-		virtual void setHeavyKey(const std::string& val){
-			Validate::validate(mPrefix + IComposition_heavyKey, val);
-			mHK = val;
+		virtual bool setHeavyKey(const std::string& val){
+			try{
+				Validate::validate(mPrefix + IComposition_heavyKey, val);
+				mHK = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IComposition_heavyKeyUnit = "_Composition.hkUnit";
 		virtual std::string getHeavyKeyUnit(){ return mHKU; }
-		virtual void setHeavyKeyUnit(const std::string& val){
-			Validate::validate(mPrefix + IComposition_heavyKeyUnit, val);
-			mHKU = val;
+		virtual bool setHeavyKeyUnit(const std::string& val){
+			try{
+				Validate::validate(mPrefix + IComposition_heavyKeyUnit, val);
+				mHKU = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IComposition_lightKey = "_Composition.lk";
 		virtual std::string getLightKey(){ return mLK; }
-		virtual void setLightKey(const std::string& val){
-			Validate::validate(mPrefix + IComposition_lightKey, val);
-			mLK = val;
+		virtual bool setLightKey(const std::string& val){
+			try{
+				Validate::validate(mPrefix + IComposition_lightKey, val);
+				mLK = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IComposition_lightKeyUnit = "_Composition.lkUnit";
 		virtual std::string getLightKeyUnit(){ return mLKU; }
-		virtual void setLightKeyUnit(const std::string& val){
-			Validate::validate(mPrefix + IComposition_lightKeyUnit, val);
-			mLKU = val;
+		virtual bool setLightKeyUnit(const std::string& val){
+			try{
+				Validate::validate(mPrefix + IComposition_lightKeyUnit, val);
+				mLKU = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IComposition_analyzerTag = "_Composition.analyzerTag";
 		virtual std::string getAnalyzerTag(){ return mAnalyzerTag; }
-		virtual void setgetAnalyzerTag(const std::string& val){
-			Validate::validate(mPrefix + IComposition_analyzerTag, val);
-			mAnalyzerTag = val;
+		virtual bool setAnalyzerTag(const std::string& val){
+			try{
+				Validate::validate(mPrefix + IComposition_analyzerTag, val);
+				mAnalyzerTag = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IComposition_labTag = "_Composition.labTag";
 		virtual std::string getLabTag(){ return mLabTag; }
-		virtual void setLabTag(const std::string& val){
-			Validate::validate(mPrefix + IComposition_labTag, val);
-			mLabTag = val;
+		virtual bool setLabTag(const std::string& val){
+			try{
+				Validate::validate(mPrefix + IComposition_labTag, val);
+				mLabTag = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IComposition_deltaTempTag = "_Composition.deltaTempTag";
 		virtual std::string getDeltaTempTag(){ return mDeltaTempTag; }
-		virtual void setDeltaTempTag(const std::string& val){
-			Validate::validate(mPrefix + IComposition_deltaTempTag, val);
-			mDeltaTempTag = val;
+		virtual bool setDeltaTempTag(const std::string& val){
+			try{
+				Validate::validate(mPrefix + IComposition_deltaTempTag, val);
+				mDeltaTempTag = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IComposition_lowTempTag = "_Composition.lowTempTag";
 		virtual std::string getLowTempTag(){ return mLowTempTag; }
-		virtual void setLowTempTag(const std::string& val){
-			Validate::validate(mPrefix + IComposition_lowTempTag, val);
-			mLowTempTag = val;
+		virtual bool setLowTempTag(const std::string& val){
+			try{
+				Validate::validate(mPrefix + IComposition_lowTempTag, val);
+				mLowTempTag = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IComposition_highTempTag = "_Composition.highTempTag";
 		virtual std::string getHighTempTag(){ return mHighTempTag; }
-		virtual void setHighTempTag(const std::string& val){
-			Validate::validate(mPrefix + IComposition_highTempTag, val);
-			mHighTempTag = val;
+		virtual bool setHighTempTag(const std::string& val){
+			try{
+				Validate::validate(mPrefix + IComposition_highTempTag, val);
+				mHighTempTag = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 	protected:

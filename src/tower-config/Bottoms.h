@@ -34,7 +34,17 @@ namespace dacore {
 
 		const char* IBottoms_heatingMediumOtherText = "Bottoms.heatingMediumOtherTxt";
 		virtual std::string getHeatingMediumOtherText(){ return mHeatingMediumOtherText; }
-		virtual void setHeatingMediumOtherText(const std::string& text){ mHeatingMediumOtherText = text; }
+		virtual bool setHeatingMediumOtherText(const std::string& text){ 
+			try{
+				Validate::validate(IBottoms_heatingMediumOtherText, text);
+				mHeatingMediumOtherText = text;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+		}
 
 		const char* IBottoms_Reboiler = "Bottoms.Reboiler";
 		virtual IReboiler* getReboiler(){ return mReboiler; }
@@ -42,20 +52,10 @@ namespace dacore {
 
 		const char* IBottoms_HeatingMediumFeeds = "Bottoms.HeatingMediumFeeds";
 		virtual IFeeds* getHeatingMediumFeeds(){ return mFeeds; }
-		virtual void setHeatingMediumFeeds(IFeeds* feeds){ mFeeds = feeds; }
 
 		//IHasComposition:
 		const char* IBottoms_Composition = "Bottoms.Composition";
 		virtual IComposition* getComposition(){ return mComposition; }
-		virtual void setComposition(IComposition* comp){ mComposition = comp; }
-
-		virtual bool isCompositionLogicReversed(){//CHECKME !!!!
-			if (isAnalysis()
-				&& getComposition()->getReportMethod() == IComposition::ReportMethod::ASSAY)
-				return false;
-			else
-				return true;
-		}
 
 		virtual ITowerReport::Status getEffectiveStatus(ITowerReport::Status status){
 
@@ -76,6 +76,19 @@ namespace dacore {
 			}
 		}
 
+		virtual bool isCompositionLogicReversed(){//CHECKME !!!!
+			if (isAnalysis()
+				&& getComposition()->getReportMethod() == IComposition::ReportMethod::ASSAY)
+				return false;
+			else
+				return true;
+		}
+
+	private:
+		virtual void setComposition(IComposition* comp){ mComposition = comp; }
+
+		virtual void setHeatingMediumFeeds(IFeeds* feeds){ mFeeds = feeds; }
+
 	private:
 		IComposition*   mComposition;
 		IReboiler*      mReboiler;
@@ -83,7 +96,7 @@ namespace dacore {
 		HeatingMedium   mHeatingMedium;
 		IFeeds*         mFeeds;
 
-	public://protected:
+	public://TODO: protected:
 		//ISerialize:
 		virtual void serialize(boost::property_tree::ptree& pt){
 			ISerialize::serializeObj(pt, IBottoms_Composition, mComposition);

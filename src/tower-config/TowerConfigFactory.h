@@ -101,7 +101,6 @@ namespace dacore {
 
 			config->setName("12D1");
 			config->setIsInactive(false);
-			config->setIsIncomplete(false);
 
 			IFeeds* feeds = config->getFeeds();
 			std::vector<FeedId> fids;

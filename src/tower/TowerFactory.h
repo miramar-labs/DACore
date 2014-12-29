@@ -21,8 +21,6 @@ namespace dacore {
 
 	class TowerFactory {
 
-		friend class IManager;
-
 	public:
 
 		static ITower* create(ITower::Type type = ITower::Type::DISTILLATION, TowerId id = 0){

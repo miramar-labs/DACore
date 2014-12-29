@@ -18,11 +18,15 @@ namespace dacore {
 
 	class DACORE_API IOverhead : public IHasComposition {
 
+		friend class TowerConfigFactory;
+
 	public:
 		virtual ~IOverhead(){}
 
 		virtual IExternalReflux* getExternalReflux() = 0;
-		virtual void setExternalReflux(IExternalReflux* ext) = 0;//TODO - private
+
+	private:
+		virtual void setExternalReflux(IExternalReflux* ext) = 0;
 
 	};
 

@@ -36,34 +36,34 @@ namespace dacore {
 		virtual void setIsManipulatedSetPoint(bool v) = 0;
 
 		virtual double getInstabilityValPercent() = 0;
-		virtual void setInstabilityValPercent(double v) = 0;
+		virtual bool setInstabilityValPercent(double v) = 0;
 
 		virtual std::string getHeavyKey() = 0;
-		virtual void setHeavyKey(const std::string& v) = 0;
+		virtual bool setHeavyKey(const std::string& v) = 0;
 
 		virtual std::string getHeavyKeyUnit() = 0;
-		virtual void setHeavyKeyUnit(const std::string& v) = 0;
+		virtual bool setHeavyKeyUnit(const std::string& v) = 0;
 
 		virtual std::string getLightKey() = 0;
-		virtual void setLightKey(const std::string& v) = 0;
+		virtual bool setLightKey(const std::string& v) = 0;
 
 		virtual std::string getLightKeyUnit() = 0;
-		virtual void setLightKeyUnit(const std::string& v) = 0;
+		virtual bool setLightKeyUnit(const std::string& v) = 0;
 
 		virtual std::string getAnalyzerTag() = 0;
-		virtual void setgetAnalyzerTag(const std::string& v) = 0;
+		virtual bool setAnalyzerTag(const std::string& v) = 0;
 
 		virtual std::string getLabTag() = 0;
-		virtual void setLabTag(const std::string& v) = 0;
+		virtual bool setLabTag(const std::string& v) = 0;
 
 		virtual std::string getDeltaTempTag() = 0;
-		virtual void setDeltaTempTag(const std::string& v) = 0;
+		virtual bool setDeltaTempTag(const std::string& v) = 0;
 
 		virtual std::string getLowTempTag() = 0;
-		virtual void setLowTempTag(const std::string& v) = 0;
+		virtual bool setLowTempTag(const std::string& v) = 0;
 
 		virtual std::string getHighTempTag() = 0;
-		virtual void setHighTempTag(const std::string& v) = 0;
+		virtual bool setHighTempTag(const std::string& v) = 0;
 
 		//computed:	
 		virtual bool isManualLab() = 0;

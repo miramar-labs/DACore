@@ -19,52 +19,52 @@ namespace dacore {
 		virtual ~IControlLimits(){}
 
 		virtual double getHeavyKeyMin() = 0;
-		virtual void setHeavyKeyMin(double val) = 0;
+		virtual bool setHeavyKeyMin(double val) = 0;
 
 		virtual double getHeavyKeyMax() = 0;
-		virtual void setHeavyKeyMax(double val) = 0;
+		virtual bool setHeavyKeyMax(double val) = 0;
 
 		virtual double getLightKeyMin() = 0;
-		virtual void setLightKeyMin(double val) = 0;
+		virtual bool setLightKeyMin(double val) = 0;
 
 		virtual double getLightKeyMax() = 0;
-		virtual void setLightKeyMax(double val) = 0;
+		virtual bool setLightKeyMax(double val) = 0;
 
 		virtual double getDeltaInstrumentMin() = 0;
-		virtual void setDeltaInstrumentMin(double val) = 0;
+		virtual bool setDeltaInstrumentMin(double val) = 0;
 
 		virtual double getDeltaInstrumentMax() = 0;
-		virtual void setDeltaInstrumentMax(double val) = 0;
+		virtual bool setDeltaInstrumentMax(double val) = 0;
 
 		virtual double getRefluxMin() = 0;
-		virtual void setRefluxMin(double val) = 0;
+		virtual bool setRefluxMin(double val) = 0;
 
 		virtual double getRefluxMax() = 0;
-		virtual void setRefluxMax(double val) = 0;
+		virtual bool setRefluxMax(double val) = 0;
 
 		virtual double getFeedMin() = 0;
-		virtual void setFeedMin(double val) = 0;
+		virtual bool setFeedMin(double val) = 0;
 
 		virtual double getFeedMax() = 0;
-		virtual void setFeedMax(double val) = 0;
+		virtual bool setFeedMax(double val) = 0;
 
 		virtual double getHeatingMediumFlowMin() = 0;
-		virtual void setHeatingMediumFlowMin(double val) = 0;
+		virtual bool setHeatingMediumFlowMin(double val) = 0;
 
 		virtual double getHeatingMediumFlowMax() = 0;
-		virtual void setHeatingMediumFlowMax(double val) = 0;
+		virtual bool setHeatingMediumFlowMax(double val) = 0;
 
 		virtual double getOperatingPressureMin() = 0;
-		virtual void setOperatingPressureMin(double val) = 0;
+		virtual bool setOperatingPressureMin(double val) = 0;
 
 		virtual double getOperatingPressureMax() = 0;
-		virtual void setOperatingPressureMax(double val) = 0;
+		virtual bool setOperatingPressureMax(double val) = 0;
 
 		virtual double getPressureControllerMin() = 0;
-		virtual void setPressureControllerMin(double val) = 0;
+		virtual bool setPressureControllerMin(double val) = 0;
 
 		virtual double getPressureControllerMax() = 0;
-		virtual void setPressureControllerMax(double val) = 0;
+		virtual bool setPressureControllerMax(double val) = 0;
 
 		enum class RefluxLimitType {
 			REFLUX_FEED, REFLUX

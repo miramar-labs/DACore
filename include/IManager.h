@@ -103,6 +103,10 @@ namespace dacore {
 		virtual void			loadHistorians() = 0;
 		virtual void			saveHistorians() = 0;
 		virtual bool			saveHistorian(HistorianId id) = 0;
+
+	private:
+		const std::string towerFilename(ITower* tower);
+		const std::string historianFilename(IHistorian* historian);
 	};
 
 }// namespace

@@ -47,7 +47,7 @@ namespace dacore {
 		bool				mSuggestChanges;
 		bool				mPressureReverseActing;
 
-	public://protected:
+	public://TODO: protected:
 		//ISerialize:
 		virtual void serialize(boost::property_tree::ptree& pt){
 			pt.put(IColumn_isUsingOvhToDetermineLoading, mUsingOHK);

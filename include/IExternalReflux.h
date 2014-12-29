@@ -25,29 +25,30 @@ namespace dacore {
 		virtual bool getLevelControl() = 0;
 		virtual void setLevelControl(bool val) = 0;
 
-		virtual bool getConfigured() = 0;
+		//enable/disable reflux :
+		virtual bool getConfigured() = 0;			
 		virtual void setConfigured(bool val) = 0;
 
 		virtual IncreaseMethod getIncreaseMethod() = 0;
 		virtual void setIncreaseMethod(const IncreaseMethod& method) = 0;
 
 		virtual std::string getIncreaseMethodOther() = 0;
-		virtual void setIncreaseMethodOther(const std::string& other) = 0;
+		virtual bool setIncreaseMethodOther(const std::string& other) = 0;
 
 		virtual DecreaseMethod getDecreaseMethod() = 0;
 		virtual void setDecreaseMethod(const DecreaseMethod& method) = 0;
 
 		virtual std::string getDecreaseMethodOther() = 0;
-		virtual void setDecreaseMethodOther(const std::string& other) = 0;
+		virtual bool setDecreaseMethodOther(const std::string& other) = 0;
 
 		virtual std::string getFlowTag() = 0;
-		virtual void setFlowTag(const std::string& tag) = 0;
+		virtual bool setFlowTag(const std::string& tag) = 0;
 
 		virtual std::string getFlowUnit() = 0;
-		virtual void setFlowUnit(const std::string& unit) = 0;
+		virtual bool setFlowUnit(const std::string& unit) = 0;
 
 		virtual double getFlowFactor() = 0;
-		virtual void setFlowFactor(double factor) = 0;
+		virtual bool setFlowFactor(double factor) = 0;
 
 	};
 

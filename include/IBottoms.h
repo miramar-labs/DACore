@@ -20,6 +20,9 @@ namespace dacore {
 
 	class DACORE_API IBottoms : public IHasComposition {
 
+		friend class TowerConfigFactory;
+		friend class TowerConfig;
+
 	public:
 		virtual ~IBottoms(){}
 
@@ -29,12 +32,14 @@ namespace dacore {
 		virtual void setHeatingMedium(const HeatingMedium& medium) = 0;
 
 		virtual std::string getHeatingMediumOtherText() = 0;
-		virtual void setHeatingMediumOtherText(const std::string& text) = 0;
+		virtual bool setHeatingMediumOtherText(const std::string& text) = 0;
 
 		virtual IReboiler* getReboiler() = 0;
-		virtual void setReboiler(IReboiler* reboiler) = 0;//TODO - private
 
 		virtual IFeeds* getHeatingMediumFeeds() = 0;
+
+	private:
+		virtual void setReboiler(IReboiler* reboiler) = 0;
 		virtual void setHeatingMediumFeeds(IFeeds* feeds) = 0;
 
 	};

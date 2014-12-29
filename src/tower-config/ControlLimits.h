@@ -62,114 +62,242 @@ namespace dacore {
 
 		const char* IControlLimits_hk_min = "ControlLimits.hkMin";
 		virtual double getHeavyKeyMin(){ return mHKMin; }
-		virtual void setHeavyKeyMin(double val){
-			Validate::validate(IControlLimits_hk_min, val);
-			mHKMin = val;
+		virtual bool setHeavyKeyMin(double val){
+			try{
+				Validate::validate(IControlLimits_hk_min, val);
+				mHKMin = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_hk_max = "ControlLimits.hkMax";
 		virtual double getHeavyKeyMax(){ return mHKMax; }
-		virtual void setHeavyKeyMax(double val){
-			Validate::validate(IControlLimits_hk_max, val);
-			mHKMax = val;
+		virtual bool setHeavyKeyMax(double val){
+			try{
+				Validate::validate(IControlLimits_hk_max, val);
+				mHKMax = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_lk_min = "ControlLimits.lkMin";
 		virtual double getLightKeyMin(){ return mLKMin; }
-		virtual void setLightKeyMin(double val){
-			Validate::validate(IControlLimits_lk_min, val);
-			mLKMin = val;
+		virtual bool setLightKeyMin(double val){
+			try{
+				Validate::validate(IControlLimits_lk_min, val);
+				mLKMin = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_lk_max = "ControlLimits.lkMax";
 		virtual double getLightKeyMax(){ return mLKMax; }
-		virtual void setLightKeyMax(double val){
-			Validate::validate(IControlLimits_lk_max, val);
-			mLKMax = val;
+		virtual bool setLightKeyMax(double val){
+			try{
+				Validate::validate(IControlLimits_lk_max, val);
+				mLKMax = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_delta_min = "ControlLimits.deltaMin";
 		virtual double getDeltaInstrumentMin(){ return mDeltaMin; }
-		virtual void setDeltaInstrumentMin(double val){
-			Validate::validate(IControlLimits_delta_min, val);
-			mDeltaMin = val;
+		virtual bool setDeltaInstrumentMin(double val){
+			try{
+				Validate::validate(IControlLimits_delta_min, val);
+				mDeltaMin = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_delta_max = "ControlLimits.deltaMax";
 		virtual double getDeltaInstrumentMax(){ return mDeltaMax; }
-		virtual void setDeltaInstrumentMax(double val){
-			Validate::validate(IControlLimits_delta_max, val);
-			mDeltaMax = val;
+		virtual bool setDeltaInstrumentMax(double val){
+			try{
+				Validate::validate(IControlLimits_delta_max, val);
+				mDeltaMax = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_reflux_min = "ControlLimits.refluxMin";
 		virtual double getRefluxMin(){ return mRefluxMin; }
-		virtual void setRefluxMin(double val){
-			Validate::validate(IControlLimits_reflux_min, val);
-			mRefluxMin = val;
+		virtual bool setRefluxMin(double val){
+			try{
+				Validate::validate(IControlLimits_reflux_min, val);
+				mRefluxMin = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_reflux_max = "ControlLimits.refluxMax";
 		virtual double getRefluxMax(){ return mRefluxMax; }
-		virtual void setRefluxMax(double val){
-			Validate::validate(IControlLimits_reflux_max, val);
-			mRefluxMax = val;
+		virtual bool setRefluxMax(double val){
+			try{
+				Validate::validate(IControlLimits_reflux_max, val);
+				mRefluxMax = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_feed_min = "ControlLimits.feedMin";
 		virtual double getFeedMin(){ return mFeedMin; }
-		virtual void setFeedMin(double val){
-			Validate::validate(IControlLimits_feed_min, val);
-			mFeedMin = val;
+		virtual bool setFeedMin(double val){
+			try{
+				Validate::validate(IControlLimits_feed_min, val);
+				mFeedMin = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_feed_max = "ControlLimits.feedMax";
 		virtual double getFeedMax(){ return mFeedMax; }
-		virtual void setFeedMax(double val){
-			Validate::validate(IControlLimits_feed_max, val);
-			mFeedMax = val;
+		virtual bool setFeedMax(double val){
+			try{
+				Validate::validate(IControlLimits_feed_max, val);
+				mFeedMax = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_heatingMediumFlow_min = "ControlLimits.heatingMediumFlowMin";
 		virtual double getHeatingMediumFlowMin(){ return mHeatingMediumFlowMin; }
-		virtual void setHeatingMediumFlowMin(double val){
-			Validate::validate(IControlLimits_heatingMediumFlow_min, val);
-			mHeatingMediumFlowMin = val;
+		virtual bool setHeatingMediumFlowMin(double val){
+			try{
+				Validate::validate(IControlLimits_heatingMediumFlow_min, val);
+				mHeatingMediumFlowMin = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_heatingMediumFlow_max = "ControlLimits.heatingMediumFlowMax";
 		virtual double getHeatingMediumFlowMax(){ return mHeatingMediumFlowMax; }
-		virtual void setHeatingMediumFlowMax(double val){
-			Validate::validate(IControlLimits_heatingMediumFlow_max, val);
-			mHeatingMediumFlowMax = val;
+		virtual bool setHeatingMediumFlowMax(double val){
+			try{
+				Validate::validate(IControlLimits_heatingMediumFlow_max, val);
+				mHeatingMediumFlowMax = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_operatingPressure_min = "ControlLimits.operatingPressureMin";
 		virtual double getOperatingPressureMin(){ return mOpPressureMin; }
-		virtual void setOperatingPressureMin(double val){
-			Validate::validate(IControlLimits_operatingPressure_min, val);
-			mOpPressureMin = val;
+		virtual bool setOperatingPressureMin(double val){
+			try{
+				Validate::validate(IControlLimits_operatingPressure_min, val);
+				mOpPressureMin = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_operatingPressure_max = "ControlLimits.operatingPressureMax";
 		virtual double getOperatingPressureMax(){ return mOpPressureMax; }
-		virtual void setOperatingPressureMax(double val){
-			Validate::validate(IControlLimits_operatingPressure_max, val);
-			mOpPressureMax = val;
+		virtual bool setOperatingPressureMax(double val){
+			try{
+				Validate::validate(IControlLimits_operatingPressure_max, val);
+				mOpPressureMax = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_pressureController_min = "ControlLimits.pressureControllerMin";
 		virtual double getPressureControllerMin(){ return mPressureControllerMin; }
-		virtual void setPressureControllerMin(double val){
-			Validate::validate(IControlLimits_pressureController_min, val);
-			mPressureControllerMin = val;
+		virtual bool setPressureControllerMin(double val){
+			try{
+				Validate::validate(IControlLimits_pressureController_min, val);
+				mPressureControllerMin = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		const char* IControlLimits_pressureController_max = "ControlLimits.pressureControllerMax";
 		virtual double getPressureControllerMax(){ return mPressureControllerMax; }
-		virtual void setPressureControllerMax(double val){
-			Validate::validate(IControlLimits_pressureController_max, val);
-			mPressureControllerMax = val;
+		virtual bool setPressureControllerMax(double val){
+			try{
+				Validate::validate(IControlLimits_pressureController_max, val);
+				mPressureControllerMax = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
+
 		}
 
 		virtual const RefluxLimitType& getRefluxLimitType(){ return mRefluxLimitType; }

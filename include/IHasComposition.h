@@ -19,16 +19,20 @@ namespace dacore {
 
 	class DACORE_API IHasComposition : public ISerialize {
 
+		friend class IAlgorithm;
+		friend class TowerConfigFactory;
+
 	public:
 		virtual ~IHasComposition(){}
 
 		virtual IComposition* getComposition() = 0;
 
-		virtual void setComposition(IComposition* comp) = 0;//TODO - private
+		virtual ITowerReport::Status getEffectiveStatus(ITowerReport::Status status) = 0;
 
 		virtual bool isCompositionLogicReversed() = 0;
 
-		virtual ITowerReport::Status getEffectiveStatus(ITowerReport::Status status) = 0;
+	private:
+		virtual void setComposition(IComposition* comp) = 0;
 
 	};
 

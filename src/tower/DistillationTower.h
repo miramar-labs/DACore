@@ -21,34 +21,35 @@ namespace dacore {
 
 	class DistillationTower : public ITower {
 
-		friend class TowerFactory;
-
+	public:
 		DistillationTower(TowerId id = 0):mID(id){
 			Validate::registerStrPattern(ITower_name, std::tuple<std::string, std::string, std::string>(Validate::REGEX_ALPHA_NUM, "", Validate::INVALID_STR));
 		}
 
-	public:
 		virtual ~DistillationTower(){ delete mTowerData; delete mTowerConfig; delete mTowerReport; }
 
 		const char* ITower_name = "Tower.name";
 		virtual std::string     getName(){ return mName; }
-		virtual void            setName(const std::string& name){
-			Validate::validate(ITower_name, name); mName = name;
+		virtual bool            setName(const std::string& name){
+			try{
+				Validate::validate(ITower_name, name); mName = name;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* ITower_data = "Tower.Data";
 		virtual ITowerData*     getData(){ return mTowerData; }
-		virtual void            setData(ITowerData* data){ mTowerData = data; }
 
 		const char* ITower_config = "Tower.Config";
 		virtual ITowerConfig*   getConfig(){ return mTowerConfig; }
-		virtual void            setConfig(ITowerConfig* config){ mTowerConfig = config; }
 
 		const char* ITower_report = "Tower.Report";
 		virtual ITowerReport*   getReport(){ return mTowerReport; }
-		virtual void            setReport(ITowerReport* report){ mTowerReport = report; }
 
-		virtual TowerId   getId(){ return mID; }
 
 		virtual ITower::Type getType(){ return mType; }
 		virtual void setType(ITower::Type type){ mType = type; }
@@ -66,8 +67,16 @@ namespace dacore {
 			}
 		}
 
+		virtual TowerId getId(){ return mID; }
+
 	private:
 		virtual void    setId(unsigned long id){ mID = id; }
+
+		virtual void	setData(ITowerData* data){ mTowerData = data; }
+
+		virtual void	setConfig(ITowerConfig* config){ mTowerConfig = config; }
+
+		virtual void	setReport(ITowerReport* report){ mTowerReport = report; }
 
 	protected:
 		ITower::Type	mType;

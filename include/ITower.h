@@ -39,31 +39,35 @@ class IComposition;
 
 	class DACORE_API ITower : public ISerialize {
 
+		friend class TowerFactory;
+		friend class Manager;
+
 	public:
 		virtual ~ITower(){}
 
 		enum Type { DISTILLATION
 //					,AMINE_ABSORBER
-					,DTPRIME				//TODO: remove this
+					,DTPRIME				//TODO: TEST only
 				  };
 
 		virtual ITower::Type getType() = 0;
 		virtual void setType(ITower::Type type) = 0;
 
 		virtual std::string     getName() = 0;
-		virtual void            setName(const std::string& name) = 0;
+		virtual bool            setName(const std::string& name) = 0;		
 
 		virtual ITowerData*     getData() = 0;
-		virtual void            setData(ITowerData* data) = 0;
-
 		virtual ITowerConfig*   getConfig() = 0;
-		virtual void            setConfig(ITowerConfig* config) = 0;
-
 		virtual ITowerReport*   getReport() = 0;
-		virtual void            setReport(ITowerReport* report) = 0;
 
 		virtual TowerId			getId() = 0;
-		virtual void            setId(TowerId id) = 0;	//TODO: remove?
+
+	private:
+		virtual void            setData(ITowerData* data) = 0;
+		virtual void            setConfig(ITowerConfig* config) = 0;
+		virtual void            setReport(ITowerReport* report) = 0;
+
+		virtual void            setId(TowerId id) = 0;	
 
 	};
 

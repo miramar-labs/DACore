@@ -22,6 +22,8 @@ namespace dacore {
 	class IControlLimits;
 
 	class DACORE_API ITowerConfig : public ISerialize {
+		
+		friend class TowerConfigFactory;
 
 	public:
 		virtual ~ITowerConfig(){}
@@ -38,7 +40,6 @@ namespace dacore {
 		virtual IColumn* getColumn() = 0;
 
 		virtual bool isIncomplete() = 0;
-		virtual void setIsIncomplete(bool incomplete) = 0;
 
 		virtual bool isInactive() = 0;
 		virtual void setIsInactive(bool inactive) = 0;
@@ -49,7 +50,7 @@ namespace dacore {
 		virtual IOverrides* getOverrides() = 0;
 
 		virtual std::string getName() = 0;
-		virtual void setName(const std::string& name) = 0;
+		virtual bool setName(const std::string& name) = 0;
 
 		virtual IControlLimits* getControlLimits() = 0;
 
@@ -58,7 +59,8 @@ namespace dacore {
 		virtual bool hasAbsoluteControlOfBase() = 0;
 		virtual bool isBaseControlledAt10to90Percent() = 0;
 
-	//TODO:private:
+private:
+
 		virtual void setBottoms(IBottoms* base) = 0;
 		virtual void setOverhead(IOverhead* overhead) = 0;
 		virtual void setFeeds(IFeeds* feeds) = 0;

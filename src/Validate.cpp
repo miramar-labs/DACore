@@ -8,7 +8,7 @@ namespace dacore{
 const char* Validate::REGEX_ALPHA_NUM = ""; //TODO
 const char* Validate::INVALID_STR = "<INVALID>";
 const double Validate::INVALID_DBL = std::numeric_limits<double>::max();
-const double Validate::MAX_DBL = std::numeric_limits<double>::max()-1;
+const double Validate::MAX_DBL = INVALID_DBL - 1;
 
 
 std::map<std::string, std::tuple<std::string, std::string, std::string> >	mPropStrValidationMap;		// map of property 'name' to {regex, default, invalid}

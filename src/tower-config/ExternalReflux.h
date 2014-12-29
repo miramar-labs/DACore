@@ -55,9 +55,16 @@ namespace dacore {
 
 		const char* IExternalReflux_incMethodOther = "ExternalReflux.incMethodOther";
 		virtual std::string getIncreaseMethodOther(){ return mIncMethodOther; }
-		virtual void setIncreaseMethodOther(const std::string& val){
-			Validate::validate(IExternalReflux_incMethodOther, val);
-			mIncMethodOther = val;
+		virtual bool setIncreaseMethodOther(const std::string& val){
+			try{
+				Validate::validate(IExternalReflux_incMethodOther, val);
+				mIncMethodOther = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IExternalReflux_decMethod = "ExternalReflux.decMethod";
@@ -69,30 +76,58 @@ namespace dacore {
 
 		const char* IExternalReflux_decMethodOther = "ExternalReflux.decMethodOther";
 		virtual std::string getDecreaseMethodOther(){ return mDecMethodOther; }
-		virtual void setDecreaseMethodOther(const std::string& val){
-			Validate::validate(IExternalReflux_decMethodOther, val);
-			mIncMethodOther = val;
+		virtual bool setDecreaseMethodOther(const std::string& val){
+			try{
+				Validate::validate(IExternalReflux_decMethodOther, val);
+				mIncMethodOther = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IExternalReflux_flowTag = "ExternalReflux.flowTag";
 		virtual std::string getFlowTag(){ return mFlowTag; }
-		virtual void setFlowTag(const std::string& val){
-			Validate::validate(IExternalReflux_flowTag, val);
-			mFlowTag = val;
+		virtual bool setFlowTag(const std::string& val){
+			try{
+				Validate::validate(IExternalReflux_flowTag, val);
+				mFlowTag = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IExternalReflux_flowUnit = "ExternalReflux.flowUnit";
 		virtual std::string getFlowUnit(){ return mFlowUnit; }
-		virtual void setFlowUnit(const std::string& val){
-			Validate::validate(IExternalReflux_flowUnit, val);
-			mFlowTag = val;
+		virtual bool setFlowUnit(const std::string& val){
+			try{
+				Validate::validate(IExternalReflux_flowUnit, val);
+				mFlowTag = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		const char* IExternalReflux_flowFactor = "ExternalReflux.flowFactor";
 		virtual double getFlowFactor(){ return mFlowFactor; }
-		virtual void setFlowFactor(double val){
-			Validate::validate(IExternalReflux_flowFactor, val);
-			mFlowFactor = val;
+		virtual bool setFlowFactor(double val){
+			try{
+				Validate::validate(IExternalReflux_flowFactor, val);
+				mFlowFactor = val;
+				return true;
+			}
+			catch (std::exception& e){
+				//TODO: logging and mechachanism to pass info across DLL boundary...
+				return false;
+			}
 		}
 
 		static const char* ExternalReflux::incMethodStr(IncreaseMethod m){
@@ -144,7 +179,7 @@ namespace dacore {
 		std::string             mFlowUnit;
 		double                  mFlowFactor;
 
-	public://protected:
+	public://TODO: protected:
 		//ISerialize:
 		virtual void serialize(boost::property_tree::ptree& pt){
 			pt.put(IExternalReflux_levelControl, mLevelControl);

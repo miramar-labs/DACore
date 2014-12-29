@@ -27,14 +27,11 @@ namespace dacore {
 		//IOverhead:
 		const char* IOverhead_externalReflux = "Overhead.ExternalReflux";
 		virtual IExternalReflux* getExternalReflux(){ return mExtReflux; }
-		virtual void setExternalReflux(IExternalReflux* ext){ mExtReflux = ext; }
+
 
 		//IHasComposition:
 		const char* IOverhead_composition = "Overhead.Composition";
 		virtual IComposition* getComposition(){ return mComp; }
-		virtual void setComposition(IComposition* comp){ mComp = comp; }
-
-		virtual bool isCompositionLogicReversed(){ return mComp->getReportMethod() == IComposition::ReportMethod::ASSAY; }
 
 		virtual ITowerReport::Status getEffectiveStatus(ITowerReport::Status status){
 
@@ -55,11 +52,17 @@ namespace dacore {
 			}
 		}
 
+		virtual bool isCompositionLogicReversed(){ return mComp->getReportMethod() == IComposition::ReportMethod::ASSAY; }	
+
+	private:
+		virtual void setExternalReflux(IExternalReflux* ext){ mExtReflux = ext; }
+		virtual void setComposition(IComposition* comp){ mComp = comp; }	
+
 	protected:
 		IExternalReflux*    mExtReflux;
 		IComposition*       mComp;
 
-	public://protected:
+	public://TODO: protected:
 		//ISerialize:
 		virtual void serialize(boost::property_tree::ptree& pt){
 			ISerialize::serializeObj(pt, IOverhead_externalReflux, mExtReflux);

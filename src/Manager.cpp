@@ -25,7 +25,7 @@ namespace dacore{
 	static std::map<TowerId, ITower*>          mTowers;
 	static std::map<HistorianId, IHistorian*>  mHistorians;
 
-	static Manager gManager;		//TODO - singleton class
+	static Manager gManager;		//TODO - singleton class and smart pointers etc...
 
 	extern "C" DACORE_API dacore::IManager* DACORE_APIENTRY getManager(){
 		return &gManager;
@@ -36,17 +36,21 @@ namespace dacore{
 	static const char *TOWER_DATA_DIR = ".\\data\\towers\\";
 	static const char *HISTORIAN_DATA_DIR = ".\\data\\historians\\";
 
-	const std::string towerFilename(ITower* tower){
+	const std::string Manager::towerFilename(ITower* tower){
 		std::ostringstream sstrm;
 		sstrm << TOWER_DATA_DIR << "tower-" << std::to_string(tower->getId()) << ".json";
 		return sstrm.str();
 	}
 
-	const std::string historianFilename(IHistorian* historian){
+	const std::string Manager::historianFilename(IHistorian* historian){
 		std::ostringstream sstrm;
 		sstrm << HISTORIAN_DATA_DIR << "historian-" << std::to_string(historian->getId()) << ".json";
 		return sstrm.str();
 	}
+
+	static void removeTowerFile(TowerId tid);
+
+	static void removeHistorianFile(HistorianId hid);
 
 	Manager::~Manager(){
 
@@ -155,6 +159,9 @@ namespace dacore{
 		ITowers* pt = ph->getTowers();
 		pt->add(tower->getId());
 
+		saveTower(tower->getId());	// save changes to fs
+		saveHistorian(hid);			// save changes to fs
+
 		return tower->getId();
 	}
 
@@ -180,7 +187,22 @@ namespace dacore{
 		// no refs found, so safe to delete
 		delete (*tit).second;
 		mTowers.erase(tit);
+
+		saveHistorian(hid);			// save changes to fs
+		removeTowerFile(tid);		// save changes to fs
+
 		return true;
+	}
+
+	static void removeTowerFile(TowerId tid){
+		const std::string prefix = std::string(TOWER_DATA_DIR) + "tower-";
+		const std::string sID = boost::lexical_cast<std::string>(tid);
+		const std::string postfix = ".json";
+
+		boost::filesystem::path towerFile(prefix+sID+postfix);
+		if (boost::filesystem::exists(towerFile)){
+			boost::filesystem::remove(towerFile);
+		}
 	}
 
 	//========================================================================================================================
@@ -279,6 +301,9 @@ namespace dacore{
 		}
 		historian->setId(maxid + 1);
 		mHistorians.insert(std::pair<int, IHistorian*>(historian->getId(), historian));
+
+		saveHistorian(historian->getId());			// save changes to fs
+
 		return historian->getId();
 	}
 
@@ -291,7 +316,10 @@ namespace dacore{
 		if (pt->count() > 0)
 			return false;
 		delete (*it).second;
-		mHistorians.erase(hid);
+		mHistorians.erase(hid);		
+
+		removeHistorianFile(hid);		// save changes to fs
+		
 		return true;
 	}
 
@@ -300,6 +328,9 @@ namespace dacore{
 		IHistorian* h = getHistorianOfTower(tid);
 		if (h != nullptr){
 			h->getTowers()->remove(tid);
+
+			saveHistorian(hid);			// save changes to fs
+
 			return true;
 		}
 		return false;
@@ -314,9 +345,24 @@ namespace dacore{
 			if (h == nullptr)
 				return false; // no such historian
 			h->getTowers()->add(tid);
+
+			saveHistorian(hid);			// save changes to fs
+
 			return true;
 		}
 		// already in use...
 		return false;
 	}
+
+	static void removeHistorianFile(HistorianId hid){
+		const std::string prefix = std::string(HISTORIAN_DATA_DIR) + "historian-";
+		const std::string sID = boost::lexical_cast<std::string>(hid);
+		const std::string postfix = ".json";
+
+		boost::filesystem::path historianFile(prefix + sID + postfix);
+		if (boost::filesystem::exists(historianFile)){
+			boost::filesystem::remove(historianFile);
+		}
+	}
+
 }// namespace
